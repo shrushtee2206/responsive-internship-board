@@ -1,0 +1,408 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+    background: #172554;
+    color: white;
+    padding: 55px 0;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.subtitle {
+    margin: 12px 0 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters-section {
+    background: white;
+    margin-top: -25px;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.filters-section h2 {
+    margin-top: 0;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    color: #1f2937;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status-area {
+    margin: 25px 0 10px;
+    min-height: 30px;
+}
+
+#statusMessage {
+    margin: 0;
+    font-weight: 600;
+}
+
+.retry-button {
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #172554;
+    color: white;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   RESULTS HEADER
+========================= */
+
+.results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.results-header h2 {
+    margin-bottom: 5px;
+}
+
+#resultCount {
+    color: #64748b;
+    font-weight: 600;
+}
+
+
+/* =========================
+   INTERNSHIP CARDS
+========================= */
+
+.internship-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    padding: 15px 0 40px;
+}
+
+.internship-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.internship-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+}
+
+.card-id {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: bold;
+}
+
+.internship-card h3 {
+    margin: 8px 0;
+    font-size: 1.35rem;
+}
+
+.card-domain {
+    color: #1d4ed8;
+    font-weight: bold;
+}
+
+.card-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.badge {
+    background: #eff6ff;
+    color: #1e40af;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 15px 0;
+}
+
+.skill {
+    background: #f1f5f9;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+}
+
+.primary-button {
+    background: #172554;
+    color: white;
+}
+
+.secondary-button {
+    background: #e2e8f0;
+    color: #1e293b;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.retry-button:hover {
+    opacity: 0.9;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+    border-radius: 14px;
+    border: 1px dashed #94a3b8;
+}
+
+.empty-state h3 {
+    margin-top: 0;
+}
+
+
+/* =========================
+   DIALOG
+========================= */
+
+.dialog {
+    border: none;
+    border-radius: 14px;
+    padding: 0;
+    width: min(600px, 92%);
+    max-height: 90vh;
+}
+
+.dialog::backdrop {
+    background: rgba(15, 23, 42, 0.7);
+}
+
+.dialog-content {
+    position: relative;
+    padding: 30px;
+}
+
+.close-button {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    font-size: 2rem;
+    line-height: 1;
+    color: #475569;
+}
+
+.dialog h2 {
+    margin-top: 0;
+}
+
+.application-message {
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .filters {
+        grid-template-columns: 1fr;
+    }
+
+    .internship-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .site-header {
+        padding: 40px 0;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 360px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .site-header {
+        padding: 35px 0;
+    }
+
+    .site-header h1 {
+        font-size: 2rem;
+    }
+
+    .filters-section {
+        padding: 18px;
+    }
+
+    .internship-card {
+        padding: 17px;
+    }
+
+    .results-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-actions {
+        flex-direction: column;
+    }
+
+    .card-actions button {
+        width: 100%;
+    }
+
+    .dialog-content {
+        padding: 22px;
+    }
+
+}
